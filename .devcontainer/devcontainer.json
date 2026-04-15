@@ -15,7 +15,8 @@
                         "default": true
                     }
                 ],
-                "java.jdt.ls.vmargs": "--enable-preview"
+                "java.jdt.ls.vmargs": "--enable-preview",
+                "java.project.sourceLanguageLevel": "25" 
             }
         }
     }
