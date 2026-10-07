@@ -7,16 +7,31 @@
                 "vscjava.vscode-java-pack"
             ],
             "settings": {
+                // Análise de nulos mantida
                 "java.compile.nullAnalysis.mode": "automatic",
-                "java.configuration.runtime": [
+
+                // Nível de versão 25 explícito para o compilador do VS Code
+                "java.compiler.source": "25",
+                "java.compiler.target": "25",
+                "java.compiler.release": "25",
+
+                // Ativa os recursos de Preview (Instance Main Methods / Unnamed Classes)
+                "java.jdt.ls.vmargs": "-XX:+UnlockExperimentalVMOptions --enable-preview",
+                "java.run.vmargs": "--enable-preview",
+
+                // Trata a raiz e subpastas como fonte (libera subpastas sem exigir a palavra 'package')
+                "java.project.sourcePaths": [
+                    "."
+                ],
+
+                // Aponta para o Java 25 do SDKMAN da imagem oficial
+                "java.configuration.runtimes": [
                     {
                         "name": "JavaSE-25",
                         "path": "/usr/local/sdkman/candidates/java/current",
                         "default": true
                     }
-                ],
-                "java.jdt.ls.vmargs": "--enable-preview",
-                "java.project.sourceLanguageLevel": "25" 
+                ]
             }
         }
     }
